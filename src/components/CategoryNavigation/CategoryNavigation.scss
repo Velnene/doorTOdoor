@@ -1,0 +1,22 @@
+.category-navigation{
+  max-width: 1000px;
+}
+
+.category-navigation-list{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 24px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.category-navigation-list__item{
+  list-style: none;
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}

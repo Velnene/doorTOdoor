@@ -1,0 +1,46 @@
+.header-register {
+  background-color: blue;
+  padding-top: 70px;
+  padding-bottom: 40px;
+  width: 396px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-register__logo {
+  height: 38px;
+  width: 38px;
+  margin: 0 0 40px 0;
+}
+
+.header-register__welcome {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width:880px) {
+  .header-register {
+    padding-top: 232px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-register {
+    padding: 56px 0 80px;
+    width: 100%;
+  }
+
+  .header-register__logo {
+    margin: 0 auto 50px;
+  }
+
+  .header-register__welcome {
+    margin: 0 auto;
+  }
+
+
+}

@@ -1,0 +1,155 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 70px;
+}
+
+.register__header {
+  padding-top: 70px;
+  padding-bottom: 40px;
+  width: 396px;
+}
+
+.register__logo {
+  height: 38px;
+  width: 38px;
+  margin: 0 0 37px 0;
+}
+
+.register__welcome {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__lable {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #8B8B8B;
+  margin-bottom: 20px;
+}
+
+.register__lable:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+
+.register__input {
+  margin-top: 10px;
+  background: #2F2F2F;
+  border-radius: 8px;
+  color: white;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  height: 46px;
+  border: none;
+}
+
+.register__input-error {
+  color: #EE3465;
+}
+
+.register__input:invalid {
+  color: #EE3465;
+}
+
+.register__button {
+  margin-top: 69px;
+  color: white;
+  width: 396px;
+  height: 45px;
+  background: #4285F4;
+  border-radius: 3px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+  align-content: center;
+}
+
+.register__button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.register__button:disabled {
+  background-color: #8B8B8B;
+}
+
+.register__enter {
+  margin: 0;
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8B8B8B;
+}
+
+.register__enter-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4285F4;
+  margin: 0;
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+.register__error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 10px 0 0;
+}
+
+.register__error_active{
+  color: #EE3465;
+}
+
+@media screen and (max-width:500px) {
+  .register__input {
+    width: 245px;
+  }
+
+  .register {
+    padding-bottom: 30px;
+  }
+
+  .register__lable {
+    margin: 0 auto 20px;
+  }
+
+  .register__enter {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .register__enter-link {
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 7px;
+  }
+
+  .register__button {
+    width: 260px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 157px;
+  }
+}

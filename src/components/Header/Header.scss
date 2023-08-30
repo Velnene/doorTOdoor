@@ -1,0 +1,25 @@
+.header{
+  padding-top: 40px;
+  padding-bottom: 30px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo-image{
+  max-width: 40px;
+}
+
+.header__nav{
+  display: flex;
+  row-gap: 30px;
+  column-gap: 30px;
+}
+
+.header__city{
+  max-width: 200px;
+}
+
+.header__nav-item{
+  text-decoration: none;
+}
