@@ -17,39 +17,53 @@ function App() {
   const [formDisabled, getFormDisabled] = useState(false);
   const defaultLogged = localStorage.getItem("jwt") ? true : false;
   const [loggedIn, setLoggedIn] = useState(defaultLogged);
+  const [product, getProduct] = useState([]);
+  const [Searchproduct, getSearchProduct] = useState([]);
 
-// Проверка на наличие jwt
- useEffect(() => {
-   const jwt = localStorage.getItem("jwt");
-   if (!jwt) {
-     return;
-   } else {
-     apiMain
-       .getSign(jwt)
-       .then((res) => {
-         setLoggedIn(true);
-       })
-       .catch((err) => {
-         alert("1");
-       });
-   }
- }, []);
-  
-   useEffect(() => {
-     const jwt = localStorage.getItem("jwt");
-     if (loggedIn) {
-       apiMain
-         .getUserInfo(jwt)
-         .then((res) => {
-           setUserInfo(res);
-         })
-         .catch((err) => {
-           alert("2");
-         });
-     }
-   }, [loggedIn]);
-  
-  
+  // Проверка на наличие jwt
+  useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
+    if (!jwt) {
+      return;
+    } else {
+      apiMain
+        .getSign(jwt)
+        .then((res) => {
+          setLoggedIn(true);
+        })
+        .catch((err) => {
+          alert("1");
+        });
+    }
+  }, []);
+
+  useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
+    if (loggedIn) {
+      apiMain
+        .getUserInfo(jwt)
+        .then((res) => {
+          setUserInfo(res);
+        })
+        .catch((err) => {
+          alert("2");
+        });
+    }
+  }, [loggedIn]);
+
+  // Получение начальных продуктов
+  useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
+    apiMain
+      .getSavedProduct(jwt)
+      .then((res) => {
+        getProduct(res);
+        getSearchProduct(res);
+      })
+      .catch((res) => {
+        alert("Error");
+      });
+  }, [getProduct]);
 
   // Register
   function handleRegister(name, email, password) {
@@ -93,12 +107,36 @@ function App() {
       });
   }
 
+  let arr = [];
+
+  function searchForItemsByCategory(category) {
+    product.map((products) => {
+      if (products.category === category) {
+        arr.push(products);
+      }
+      console.log(arr)
+      getSearchProduct(arr);
+    });
+  }
+
   return (
     <Context.Provider value={currentUser}>
       <div className="app__container">
         <Routes>
           <Route
             path="/"
+            element={
+              <>
+                <Header loggedIn={loggedIn} />
+                <CategoryNavigation
+                  searchForItemsByCategory={searchForItemsByCategory}
+                />
+                <ProductsList product={Searchproduct} />
+              </>
+            }
+          />
+          <Route
+            path="/apartments"
             element={
               <>
                 <Header loggedIn={loggedIn} />

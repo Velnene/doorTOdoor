@@ -15,3 +15,36 @@ export const NUMBER_NOT_FOUND = 0;
 export const MIN_LENGTH_NAME = 2;
 
 export const REGULAR_EXPRESSIONS = /\S+@\S+\.\S+/;
+
+export const categoryArray = [
+  {
+    name: "Квартиры",
+    link: "apartments",
+    id: 1,
+  },
+  {
+    name: "Машины",
+    link: "cars",
+    id: 2,
+  },
+  {
+    name: "Одежда",
+    link: "clothes",
+    id: 3,
+  },
+  {
+    name: "Личное",
+    link: "private",
+    id: 4,
+  },
+  {
+    name: "Игрушки",
+    link: "toys",
+    id: 5,
+  },
+  {
+    name: "Техника",
+    link: "technic",
+    id: 6,
+  },
+];

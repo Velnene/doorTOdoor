@@ -22,10 +22,3 @@
   padding-left: 30px;
   padding-right: 30px;
 }
-
-.category-navigation-list__item {
-  list-style: none;
-  width: 100px;
-  height: 100px;
-  background-color: aqua;
-}

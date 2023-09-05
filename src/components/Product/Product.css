@@ -1,0 +1,13 @@
+.product__item {
+  width: 200px;
+  height: 200px;
+  background-color: chartreuse;
+  list-style: none;
+  position: relative;
+}
+
+.product__item-delete-button {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

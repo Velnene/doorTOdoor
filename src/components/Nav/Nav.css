@@ -1,0 +1,12 @@
+.category-navigation-list__item {
+  width: 100px;
+  list-style: none;
+  height: 100px;
+  background-color: aqua;
+}
+
+.category-navigation-list__item-link {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
