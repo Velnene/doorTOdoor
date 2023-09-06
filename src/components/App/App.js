@@ -9,16 +9,17 @@ import ProductsList from "../ProductsList/ProductsList.js";
 import { Context } from "../../context/CurrentUserContext";
 import React, { useState, useEffect } from "react";
 import apiMain from "../../utils/MainApi";
+import CreateProduct from "../CreateProduct/CreateProduct.js";
 
 function App() {
   const navigate = useNavigate("");
-
+  const [updete, getUpdete] = useState();
   const [currentUser, setUserInfo] = useState({ name: "Viktor" });
   const [formDisabled, getFormDisabled] = useState(false);
   const defaultLogged = localStorage.getItem("jwt") ? true : false;
   const [loggedIn, setLoggedIn] = useState(defaultLogged);
   const [product, getProduct] = useState([]);
-  const [Searchproduct, getSearchProduct] = useState([]);
+  const [searchProduct, getSearchProduct] = useState([]);
 
   // Проверка на наличие jwt
   useEffect(() => {
@@ -63,7 +64,7 @@ function App() {
       .catch((res) => {
         alert("Error");
       });
-  }, [getProduct]);
+  }, [updete]);
 
   // Register
   function handleRegister(name, email, password) {
@@ -114,9 +115,33 @@ function App() {
       if (products.category === category) {
         arr.push(products);
       }
-      console.log(arr)
+      console.log(arr);
       getSearchProduct(arr);
     });
+  }
+
+  function deleteProduct(id) {
+    const jwt = localStorage.getItem("jwt");
+    console.log(id);
+    apiMain
+      .deleteProduct(id, jwt)
+      .then((res) => {
+        console.log("Delete Product");
+        alert("Delete Product");
+        console.log(res);
+        getUpdete(res);
+      })
+      .catch((res) => {
+        alert("Error");
+      });
+  }
+
+  // Поиск карточки
+  function handleSerchProduct(word) {
+    let findProduct = product.filter((element) =>
+      element.nameRU.toLowerCase().match(word.toLowerCase())
+    );
+    getSearchProduct(findProduct);
   }
 
   return (
@@ -127,11 +152,17 @@ function App() {
             path="/"
             element={
               <>
-                <Header loggedIn={loggedIn} />
+                <Header
+                  loggedIn={loggedIn}
+                  handleSerchFilm={handleSerchProduct}
+                />
                 <CategoryNavigation
                   searchForItemsByCategory={searchForItemsByCategory}
                 />
-                <ProductsList product={Searchproduct} />
+                <ProductsList
+                  deleteProduct={deleteProduct}
+                  product={searchProduct}
+                />
               </>
             }
           />
@@ -165,6 +196,12 @@ function App() {
                 loggedIn={loggedIn}
                 formDisabled={formDisabled}
               />
+            }
+          />
+          <Route
+            path="/newproduct"
+            element={
+              <CreateProduct loggedIn={loggedIn} formDisabled={formDisabled} />
             }
           />
         </Routes>

@@ -1,12 +1,13 @@
 import "./SearchForm.css";
 import { useState } from "react";
 
-function SearchForm({  }) {
-  const [value, getValue] = useState('');
+function SearchForm(props) {
+  const [value, getValue] = useState("");
   const [valid, getValid] = useState(true);
 
   function handleSubmit(e) {
     e.preventDefault();
+    props.handleSerchFilm(value);
   }
 
   function handleChangeInput(e) {

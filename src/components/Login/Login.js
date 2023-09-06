@@ -3,11 +3,9 @@ import HeaderRegister from "../HeaderRegister/HeaderRegister";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MIN_LENGTH_PASSWORD } from "../../const/const";
-import { Navigate } from "react-router-dom";
+import { REGULAR_EXPRESSIONS } from "../../const/const";
 
 function Login(props) {
-  const REGULAR_EXPRESSIONS = /\S+@\S+\.\S+/;
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

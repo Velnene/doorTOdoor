@@ -20,7 +20,7 @@ class SaveMovies {
       })
   }
 
-  saveProduct(product, jwt) {
+  saveProduct({category, city, year, description, image, trailerLink, nameRU}, jwt) {
     return fetch(this._url + '/product', {
       method: "POST",
       headers: {
@@ -28,13 +28,13 @@ class SaveMovies {
         authorization: `Bearer ${jwt}`,
       },
       body: JSON.stringify({
-        category: product.category,
-        city: product.city,
-        year: product.year,
-        description: product.description,
-        image: product.image,
-        trailerLink: product.trailerLink,
-        nameRU: product.nameRU,
+        category: category,
+        city: city,
+        year: year,
+        description: description,
+        image: image,
+        trailerLink: trailerLink,
+        nameRU: nameRU,
       }),
     }).then((res) => {
       if (res.ok) {

@@ -1,0 +1,25 @@
+.create-product{
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.create-product__form{
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-product__lable {
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-product__lable:nth-last-of-type(1){
+  margin-top: 10px;
+}
+
+.create-product__input{
+  margin-top: 10px;
+}

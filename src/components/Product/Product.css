@@ -11,3 +11,16 @@
   left: 0;
   bottom: 0;
 }
+
+.product__image {
+  min-height: 200px;
+  max-width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product__name {
+  position: absolute;
+  top: 0;
+  color: white;
+}

@@ -23,7 +23,7 @@ function Header(props) {
           </Link>
         </nav>
       </header>
-      <SearchForm />
+      <SearchForm handleSerchFilm={props.handleSerchFilm} />
     </section>
   ) : (
     <section>

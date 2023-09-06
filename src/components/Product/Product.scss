@@ -7,8 +7,19 @@
 }
 
 .product__item-delete-button{
- 
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+.product__image{
+  min-height: 200px;
+  max-width: 200px;
+  object-fit: cover;
+}
+
+.product__name{
+  position: absolute;
+  top: 0;
+  color: white;
 }
