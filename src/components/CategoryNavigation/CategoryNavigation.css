@@ -1,5 +1,5 @@
 .category-navigation {
-  max-width: 1000px;
+  padding-bottom: 30px;
 }
 
 .category-navigation-list {
@@ -19,6 +19,5 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0;
 }

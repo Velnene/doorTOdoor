@@ -1,12 +1,29 @@
-.category-navigation-list__item{
-  width: 100px;
+.nav__item{
+  width: 200px;
   list-style: none;
   height: 100px;
-  background-color: aqua;
+  background-color: #F5F5F5;
+  position: relative;
+  max-height: 80px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.category-navigation-list__item-link{
-  height: 100%;
-  width: 100%;
+.nav__item-link{
   text-decoration: none;
+  margin: 0;
+  padding-right: 10px ;
+  padding-top: 10px;
+}
+
+.nav__button{
+  position: absolute;
+  bottom: 0;
+  left: 23px;
+}
+
+.nav__image{
+  max-width: 30px;
+  max-height: 30px;
+  margin: 5px 0 5px 5px;
 }

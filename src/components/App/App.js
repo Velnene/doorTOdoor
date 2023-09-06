@@ -60,6 +60,7 @@ function App() {
       .then((res) => {
         getProduct(res);
         getSearchProduct(res);
+        console.log(res)
       })
       .catch((res) => {
         alert("Error");

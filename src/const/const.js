@@ -1,3 +1,5 @@
+import { clothes, car, electronics, home, tech, toys } from "./svgConst";
+
 export const FILMS_PER_PAGE_FOR_BIG_WIDTH = 3;
 export const FILMS_PER_PAGE_FOR_SMAL_WIDTH = 2;
 export const SHORT_FILM = 40;
@@ -20,31 +22,41 @@ export const categoryArray = [
   {
     name: "Квартиры",
     link: "apartments",
+    image: home,
     id: 1,
   },
   {
     name: "Машины",
     link: "cars",
+    image: car,
+
     id: 2,
   },
   {
     name: "Одежда",
     link: "clothes",
+    image: clothes,
+
     id: 3,
   },
   {
     name: "Личное",
     link: "private",
+    image: electronics,
+
     id: 4,
   },
   {
     name: "Игрушки",
     link: "toys",
+    image: toys,
+
     id: 5,
   },
   {
     name: "Техника",
     link: "technic",
+    image: tech,
     id: 6,
   },
 ];

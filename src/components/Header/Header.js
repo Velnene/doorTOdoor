@@ -15,9 +15,6 @@ function Header(props) {
         <img className="header__logo-image" src={logo} alt="Логотип"></img>
         <div className="header__city">Новосибирск</div>
         <nav className="header__nav">
-          <Link className="header__nav-item" to="/signup">
-            Регистрация
-          </Link>
           <Link className="header__nav-item" to="/signin">
             {context.email}
           </Link>

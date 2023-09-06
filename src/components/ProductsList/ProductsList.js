@@ -7,29 +7,13 @@ import { useNavigate } from "react-router-dom";
 function ProductsList(props) {
   const navigate = useNavigate();
 
-  
-  function getSavedProduct() {
-    const jwt = localStorage.getItem("jwt");
-    apiMain
-      .getSavedProduct(jwt)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((res) => {
-        alert("Error");
-      });
-  }
-
   function navigateProduct() {
     navigate("/newproduct");
   }
 
-
-
   return (
     <section className="products">
-      <button onClick={navigateProduct}>New Product</button>
-      <button onClick={getSavedProduct}>Get Product</button>
+      <button className="product__new-product" onClick={navigateProduct}>New Product</button>
       <section className="product-list">
         {props.product.map((product) => (
           <Product
